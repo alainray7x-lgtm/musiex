@@ -24,6 +24,96 @@ module {
     state.seeded := true;
 
     let demoSongs : [TypesSongs.SongInput] = [
+     {
+  title = "Shape of You";
+  artist = "Ed Sheeran";
+  album = "÷ (Divide)";
+  duration = 233;
+  coverArtUrl = "https://upload.wikimedia.org/wikipedia/en/4/45/Divide_cover.png";
+  audioUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3";
+  lyrics = "The club isn't the best place to find a lover\nSo the bar is where I go\nMe and my friends at the table doing shots\nDrinking fast and then we talk slow...";
+},
+{
+  title = "Blinding Lights";
+  artist = "The Weeknd";
+  album = "After Hours";
+  duration = 200;
+  coverArtUrl = "https://upload.wikimedia.org/wikipedia/en/c/c1/The_Weeknd_-_Blinding_Lights.png";
+  audioUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3";
+  lyrics = "I been tryna call\nI've been on my own for long enough\nMaybe you can show me how to love, maybe...";
+},
+{
+  title = "Rolling in the Deep";
+  artist = "Adele";
+  album = "21";
+  duration = 228;
+  coverArtUrl = "https://upload.wikimedia.org/wikipedia/en/1/1b/Adele_-_21.png";
+  audioUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3";
+  lyrics = "There's a fire starting in my heart\nReaching a fever pitch and it's bringing me out the dark...";
+},
+{
+  title = "Someone Like You";
+  artist = "Adele";
+  album = "21";
+  duration = 285;
+  coverArtUrl = "https://upload.wikimedia.org/wikipedia/en/1/1b/Adele_-_21.png";
+  audioUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3";
+  lyrics = "I heard that you're settled down\nThat you found a girl and you're married now...";
+},
+{
+  title = "Counting Stars";
+  artist = "OneRepublic";
+  album = "Native";
+  duration = 257;
+  coverArtUrl = "https://upload.wikimedia.org/wikipedia/en/7/7a/OneRepublic_Native.png";
+  audioUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3";
+  lyrics = "Lately, I've been, I've been losing sleep\nDreaming about the things that we could be...";
+},
+{
+  title = "Havana";
+  artist = "Camila Cabello";
+  album = "Camila";
+  duration = 217;
+  coverArtUrl = "https://upload.wikimedia.org/wikipedia/en/9/97/Camila_Cabello_-_Camila.png";
+  audioUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3";
+  lyrics = "Havana, ooh na-na\nHalf of my heart is in Havana, ooh na-na...";
+},
+{
+  title = "Perfect";
+  artist = "Ed Sheeran";
+  album = "÷ (Divide)";
+  duration = 263;
+  coverArtUrl = "https://upload.wikimedia.org/wikipedia/en/4/45/Divide_cover.png";
+  audioUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3";
+  lyrics = "I found a love for me\nDarling, just dive right in and follow my lead...";
+},
+{
+  title = "Lose Yourself";
+  artist = "Eminem";
+  album = "Curtain Call: The Hits";
+  duration = 326;
+  coverArtUrl = "https://upload.wikimedia.org/wikipedia/en/6/69/Eminem_-_Curtain_Call_The_Hits.jpg";
+  audioUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3";
+  lyrics = "Look, if you had one shot, or one opportunity\nTo seize everything you ever wanted...";
+},
+{
+  title = "Uptown Funk";
+  artist = "Mark Ronson ft. Bruno Mars";
+  album = "Uptown Special";
+  duration = 269;
+  coverArtUrl = "https://upload.wikimedia.org/wikipedia/en/a/a6/Mark_Ronson_-_Uptown_Special.png";
+  audioUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3";
+  lyrics = "This hit, that ice cold\nMichelle Pfeiffer, that white gold...";
+},
+{
+  title = "Let Her Go";
+  artist = "Passenger";
+  album = "All the Little Lights";
+  duration = 252;
+  coverArtUrl = "https://upload.wikimedia.org/wikipedia/en/5/5e/PassengerAllTheLittleLights.jpg";
+  audioUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-18.mp3";
+  lyrics = "Well you only need the light when it's burning low\nOnly miss the sun when it starts to snow...";
+}
       {
         title = "Bohemian Rhapsody";
         artist = "Queen";
