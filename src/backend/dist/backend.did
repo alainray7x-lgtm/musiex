@@ -1,0 +1,138 @@
+type http_request_result = 
+ record {
+   body: blob;
+   headers: vec http_header;
+   status: nat;
+ };
+type http_header = 
+ record {
+   name: text;
+   value: text;
+ };
+type UserRole = 
+ variant {
+   admin;
+   guest;
+   user;
+ };
+type UserProfile = 
+ record {
+   createdAt: Timestamp;
+   id: UserId;
+   name: text;
+   tier: SubscriptionTier;
+ };
+type UserId = principal;
+type TransformationOutput = 
+ record {
+   body: blob;
+   headers: vec http_header;
+   status: nat;
+ };
+type TransformationInput = 
+ record {
+   context: blob;
+   response: http_request_result;
+ };
+type Timestamp = int;
+type SubscriptionTier = 
+ variant {
+   free;
+   premium;
+ };
+type StripeSessionStatus = 
+ variant {
+   completed: record {
+                response: text;
+                userPrincipal: opt text;
+              };
+   failed: record {error: text;};
+ };
+type StripeConfiguration = 
+ record {
+   allowedCountries: vec text;
+   secretKey: text;
+ };
+type SongPublic = 
+ record {
+   album: text;
+   artist: text;
+   audioUrl: text;
+   coverArtUrl: text;
+   createdAt: Timestamp;
+   duration: nat;
+   id: SongId;
+   lyrics: text;
+   title: text;
+ };
+type SongInput = 
+ record {
+   album: text;
+   artist: text;
+   audioUrl: text;
+   coverArtUrl: text;
+   duration: nat;
+   lyrics: text;
+   title: text;
+ };
+type SongId = nat;
+type Song = 
+ record {
+   album: text;
+   artist: text;
+   audioUrl: text;
+   coverArtUrl: text;
+   createdAt: Timestamp;
+   duration: nat;
+   id: SongId;
+   lyrics: text;
+   title: text;
+ };
+type PlaylistInput = 
+ record {
+   description: text;
+   name: text;
+ };
+type PlaylistId = nat;
+type Playlist = 
+ record {
+   createdAt: Timestamp;
+   description: text;
+   id: PlaylistId;
+   name: text;
+   owner: UserId;
+   songIds: vec SongId;
+   updatedAt: Timestamp;
+ };
+service : {
+  _initializeAccessControl: () -> ();
+  addSong: (input: SongInput) -> (Song);
+  addSongToPlaylist: (playlistId: PlaylistId, songId: SongId) ->
+   (opt Playlist);
+  assignCallerUserRole: (user: principal, role: UserRole) -> ();
+  confirmPremiumUpgrade: (sessionId: text) -> (bool);
+  createCheckoutSession: (successUrl: text, cancelUrl: text) -> (text);
+  createPlaylist: (input: PlaylistInput) -> (Playlist);
+  deletePlaylist: (id: PlaylistId) -> (bool);
+  deleteSong: (id: SongId) -> (bool);
+  editSong: (id: SongId, input: SongInput) -> (opt Song);
+  getCallerUserProfile: () -> (opt UserProfile) query;
+  getCallerUserRole: () -> (UserRole) query;
+  getPlaylist: (id: PlaylistId) -> (opt Playlist) query;
+  getSong: (id: SongId) -> (opt SongPublic) query;
+  getStripeSessionStatus: (sessionId: text) -> (StripeSessionStatus);
+  getUserProfile: (user: UserId) -> (opt UserProfile) query;
+  getUserTier: () -> (SubscriptionTier) query;
+  isCallerAdmin: () -> (bool) query;
+  isStripeConfigured: () -> (bool) query;
+  listMyPlaylists: () -> (vec Playlist) query;
+  listSongs: () -> (vec SongPublic) query;
+  removeSongFromPlaylist: (playlistId: PlaylistId, songId: SongId) ->
+   (opt Playlist);
+  saveCallerUserProfile: (name: text) -> (UserProfile);
+  searchSongs: (searchTerm: text) -> (vec SongPublic) query;
+  setStripeConfiguration: (config: StripeConfiguration) -> ();
+  transform: (input: TransformationInput) -> (TransformationOutput) query;
+  updatePlaylist: (id: PlaylistId, input: PlaylistInput) -> (opt Playlist);
+  upgradeUserTier: () -> (bool);
+}

@@ -1,0 +1,292 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Space Grotesk", sans-serif;
+    --font-body: "General Sans", sans-serif;
+    --font-mono: "Geist Mono", monospace;
+    --radius: 0.75rem;
+
+    /* Light mode (not used — app is always dark) */
+    --background: 0.99 0 0;
+    --foreground: 0.15 0 0;
+    --card: 1.0 0 0;
+    --card-foreground: 0.15 0 0;
+    --popover: 1.0 0 0;
+    --popover-foreground: 0.15 0 0;
+    --primary: 0.7 0.15 262;
+    --primary-foreground: 0.98 0 0;
+    --secondary: 0.95 0 0;
+    --secondary-foreground: 0.25 0 0;
+    --muted: 0.95 0 0;
+    --muted-foreground: 0.5 0 0;
+    --accent: 0.72 0.17 296;
+    --accent-foreground: 0.08 0 0;
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.9 0 0;
+    --input: 0.9 0 0;
+    --ring: 0.72 0.17 296;
+    --chart-1: 0.72 0.17 296;
+    --chart-2: 0.7 0.15 262;
+    --chart-3: 0.68 0.2 45;
+    --chart-4: 0.75 0.18 320;
+    --chart-5: 0.65 0.22 25;
+    --sidebar: 0.12 0 0;
+    --sidebar-foreground: 0.96 0 0;
+    --sidebar-primary: 0.72 0.17 296;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.18 0 0;
+    --sidebar-accent-foreground: 0.88 0 0;
+    --sidebar-border: 0.22 0 0;
+    --sidebar-ring: 0.72 0.17 296;
+  }
+
+  .dark {
+    /* Deep navy base */
+    --background: 0.1 0.015 260;
+    --foreground: 0.95 0.01 260;
+
+    /* Card slightly lighter navy */
+    --card: 0.14 0.018 260;
+    --card-foreground: 0.95 0.01 260;
+
+    /* Popover elevated */
+    --popover: 0.18 0.02 260;
+    --popover-foreground: 0.95 0.01 260;
+
+    /* Cyan primary */
+    --primary: 0.75 0.16 195;
+    --primary-foreground: 0.08 0.01 260;
+
+    /* Subtle secondary */
+    --secondary: 0.18 0.02 260;
+    --secondary-foreground: 0.88 0.01 260;
+
+    --muted: 0.2 0.018 260;
+    --muted-foreground: 0.58 0.01 260;
+
+    /* Purple accent */
+    --accent: 0.68 0.22 296;
+    --accent-foreground: 0.98 0 0;
+
+    --destructive: 0.65 0.19 22;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.24 0.018 260;
+    --input: 0.22 0.018 260;
+    --ring: 0.75 0.16 195;
+
+    --chart-1: 0.75 0.16 195;
+    --chart-2: 0.68 0.22 296;
+    --chart-3: 0.72 0.18 262;
+    --chart-4: 0.78 0.2 320;
+    --chart-5: 0.65 0.22 25;
+
+    /* Sidebar — darker navy */
+    --sidebar: 0.09 0.014 260;
+    --sidebar-foreground: 0.92 0.01 260;
+    --sidebar-primary: 0.75 0.16 195;
+    --sidebar-primary-foreground: 0.08 0.01 260;
+    --sidebar-accent: 0.16 0.02 260;
+    --sidebar-accent-foreground: 0.88 0.01 260;
+    --sidebar-border: 0.22 0.015 260;
+    --sidebar-ring: 0.75 0.16 195;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(var(--muted-foreground) / 0.5);
+  }
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/assets/fonts/SpaceGrotesk.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 300 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/assets/fonts/GeistMono.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .pulse-soft {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Cyan glow */
+  .glow-primary {
+    box-shadow: 0 0 20px oklch(var(--primary) / 0.35), 0 0 40px
+      oklch(var(--primary) / 0.15);
+  }
+
+  /* Purple glow */
+  .glow-accent {
+    box-shadow: 0 0 20px oklch(var(--accent) / 0.35), 0 0 40px
+      oklch(var(--accent) / 0.15);
+  }
+
+  .glow-subtle {
+    box-shadow: 0 0 12px oklch(var(--primary) / 0.2);
+  }
+
+  /* Card with inner glow border */
+  .card-glow {
+    box-shadow: 0 0 0 1px oklch(var(--primary) / 0.2), 0 4px 24px
+      oklch(var(--background) / 0.4);
+  }
+
+  /* Shadow for elevated surfaces */
+  .shadow-subtle {
+    box-shadow: 0 1px 3px oklch(0.05 0 0 / 0.5), 0 4px 12px
+      oklch(0.05 0 0 / 0.3);
+  }
+
+  /* Gradient text: cyan → purple */
+  .text-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(var(--primary)) 0%,
+      oklch(var(--accent)) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Gradient background overlay */
+  .bg-gradient-brand {
+    background: linear-gradient(
+      135deg,
+      oklch(var(--primary) / 0.15) 0%,
+      oklch(var(--accent) / 0.1) 100%
+    );
+  }
+
+  /* Frosted glass for mini player */
+  .glass {
+    background: oklch(var(--card) / 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  /* Animated bars for "now playing" indicator */
+  .now-playing-bars span {
+    display: inline-block;
+    width: 3px;
+    height: 12px;
+    background: oklch(var(--primary));
+    border-radius: 2px;
+    animation: bar-bounce 1s ease-in-out infinite;
+  }
+  .now-playing-bars span:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+  .now-playing-bars span:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  @keyframes bar-bounce {
+    0%,
+    100% {
+      transform: scaleY(0.4);
+    }
+    50% {
+      transform: scaleY(1);
+    }
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .spin-slow {
+    animation: spin-slow 8s linear infinite;
+  }
+
+  /* Slide up entrance */
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-slide-up {
+    animation: slide-up 0.4s ease-out both;
+  }
+
+  /* Fade in */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out both;
+  }
+}

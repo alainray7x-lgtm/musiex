@@ -1,0 +1,27 @@
+{
+  "overview": "A Spotify-inspired music app where users can browse songs, create playlists, view song lyrics, and enjoy a persistent mini player. Includes free and premium tiers — premium users unlock full lyrics, unlimited playlists, and an ad-free experience. Powered by Stripe for seamless upgrades.",
+  "features": [
+    "Browse & search songs with album art, artist, and metadata",
+    "Global mini player with progress bar, skip, and volume controls",
+    "Create and manage private playlists (grid view)",
+    "Song lyrics display — teaser for free, full for premium",
+    "Premium account upgrade via Stripe checkout",
+    "Admin panel to add, edit, and delete songs",
+    "Internet Identity login and user accounts",
+    "6-8 pre-loaded demo songs with full metadata and lyrics",
+    "Responsive design for desktop and mobile"
+  ],
+  "category": "entertainment",
+  "tags": [
+    "music",
+    "spotify-clone",
+    "playlists",
+    "lyrics",
+    "premium",
+    "streaming",
+    "audio",
+    "react",
+    "motoko"
+  ],
+  "last_updated": "2026-04-26T05:13:10.401Z"
+}
