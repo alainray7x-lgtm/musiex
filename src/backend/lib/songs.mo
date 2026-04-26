@@ -33,6 +33,16 @@ module {
         audioUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
         lyrics = "Is this the real life?\nIs this just fantasy?\nCaught in a landslide\nNo escape from reality\nOpen your eyes\nLook up to the skies and see\nI'm just a poor boy, I need no sympathy\nBecause it's easy come, easy go\nLittle high, little low\nAnyway the wind blows doesn't really matter to me, to me\n\nMama, just killed a man\nPut a gun against his head\nPulled my trigger, now he's dead\nMama, life had just begun\nBut now I've gone and thrown it all away\nMama, ooh\nDidn't mean to make you cry\nIf I'm not back again this time tomorrow\nCarry on, carry on as if nothing really matters\n\nToo late, my time has come\nSends shivers down my spine\nBody's aching all the time\nGoodbye, everybody I've got to go\nGotta leave you all behind and face the truth\nMama, ooh (anyway the wind blows)\nI don't want to die\nI sometimes wish I'd never been born at all";
       },
+    et demoSongs : [TypesSongs.SongInput] = [
+      {
+        title = "Bohemian Rhapsody";
+        artist = "Queen";
+        album = "A Night at the Opera";
+        duration = 354;
+        coverArtUrl = "https://upload.wikimedia.org/wikipedia/en/9/9f/Bohemian_Rhapsody.png";
+        audioUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
+        lyrics = "Is this the real life?\nIs this just fantasy?\nCaught in a landslide\nNo escape from reality\nOpen your eyes\nLook up to the skies and see\nI'm just a poor boy, I need no sympathy\nBecause it's easy come, easy go\nLittle high, little low\nAnyway the wind blows doesn't really matter to me, to me\n\nMama, just killed a man\nPut a gun against his head\nPulled my trigger, now he's dead\nMama, life had just begun\nBut now I've gone and thrown it all away\nMama, ooh\nDidn't mean to make you cry\nIf I'm not back again this time tomorrow\nCarry on, carry on as if nothing really matters\n\nToo late, my time has come\nSends shivers down my spine\nBody's aching all the time\nGoodbye, everybody I've got to go\nGotta leave you all behind and face the truth\nMama, ooh (anyway the wind blows)\nI don't want to die\nI sometimes wish I'd never been born at all";
+      }
       {
         title = "Hotel California";
         artist = "Eagles";
